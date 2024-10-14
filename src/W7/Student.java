@@ -1,11 +1,10 @@
-
 package W7;
 
 public class Student {
 
     private String studentName;
-    private String className;
-    private double math, physical, chemistry;
+    private String className, type;
+    private double math, physical, chemistry, average;
 
     public Student(String studentName, String className, double math, double physical, double chemistry) {
         this.studentName = studentName;
@@ -13,6 +12,8 @@ public class Student {
         this.math = math;
         this.physical = physical;
         this.chemistry = chemistry;
+        setAverage();
+        setType();
     }
 
     public String getStudentName() {
@@ -54,5 +55,23 @@ public class Student {
     public void setChemistry(double chemistry) {
         this.chemistry = chemistry;
     }
+
+    public void setAverage() {
+        this.average = (math + physical + chemistry) / 3;
+    }
+
+    public void setType() {
+        this.type = CheckValid.checkTypeABCD(average);
+    }
+
+    public void display() {
+        System.out.println("Name: "+studentName+"\n"
+                + "Classes: "+className+"\n"
+                + "AVG: "+GetInformation.getDecimal(average)+"\n"
+                + "Type: "+type);
+    }
     
+    public String getType(){
+        return type;
+    }
 }

@@ -2,7 +2,6 @@ package W7;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -104,5 +103,32 @@ public class CheckValid {
             return false;
         }
         return true;
+    }
+    
+    public static boolean checkDoubleRange(String number, int min, int max) {
+        double output;
+        try {
+            output = Double.parseDouble(number);
+        } catch (NumberFormatException e) {
+            System.err.println("Maths is digit");
+            return false;
+        }
+
+        if (output > max ) {
+            System.err.println("Maths is less than equal ten");
+            return false;
+        }
+        if (output < min ) {
+            System.err.println("Maths is greater than equal zero");
+            return false;
+        }
+        return true;
+    }
+    
+    public static String checkTypeABCD(double average){
+        if (average > 7.5) return "A";
+        if (average>=6 && average<=7.5 ) return "B";
+        if (average>=4 && average<=6 ) return "C";
+        return "D";
     }
 }

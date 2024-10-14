@@ -1,5 +1,6 @@
 package W7;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class GetInformation {
@@ -40,5 +41,10 @@ public class GetInformation {
             }
         }
         return searchID;
+    }
+    
+    
+    public static String getDecimal(double input){
+        return new DecimalFormat("#,###.00").format(input);
     }
 }

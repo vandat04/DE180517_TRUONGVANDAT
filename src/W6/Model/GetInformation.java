@@ -1,37 +1,43 @@
-
 package W6.Model;
 
 import java.util.Scanner;
 
 public class GetInformation {
-        public static String getValue(String input) {
+
+    public static String getValue(String input) {
         System.out.print(input);
         return new Scanner(System.in).nextLine();
     }
-    
-    public static String getStringAndNormalize(String input){
+
+    public static String getStringAndNormalize(String input) {
         String output;
-        while (true){
+        while (true) {
             output = getValue(input);
-            if (CheckValid.checkFullName(output)) break;
+            if (CheckValid.checkFullName(output)) {
+                break;
+            }
         }
         return CheckValid.normalizeName(output);
     }
-    
-    public static String getPhoneNumber(String input){
+
+    public static String getPhoneNumber(String input) {
         String output;
-        while(true){
+        while (true) {
             output = getValue(input);
-            if (CheckValid.checkPhoneNumber(output)) break;
+            if (CheckValid.checkPhoneNumber(output)) {
+                break;
+            }
         }
         return output;
     }
-    
-    public static String getInteger(String input){
+
+    public static String getInteger(String input) {
         String searchID;
-        while (true){
+        while (true) {
             searchID = getValue(input);
-            if (CheckValid.checkInteger(searchID)) break;
+            if (CheckValid.checkInteger(searchID)) {
+                break;
+            }
         }
         return searchID;
     }

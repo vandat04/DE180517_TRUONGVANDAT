@@ -1,5 +1,6 @@
-package W6.Model;
+package W6.View;
 
+import W6.Model.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -92,7 +93,7 @@ public class CheckValid {
         }
         return true;
     }
-    
+
     public static boolean checkSalary(String salary) {
         double output;
         try {
